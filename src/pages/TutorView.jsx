@@ -1,47 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./styles/TutorView.scss"; // Custom SCSS for TutorView
+
 import Post from "../components/Post.jsx"; // Assuming Post component for each posting
 import NewPosting from "./NewPosting.jsx";
 import { useNavigate } from "react-router-dom";
+import { getPostings } from "../Database";
 import Navbar from "../components/Navbar.jsx";
+import "./styles/TutorView.scss"; // Custom SCSS for TutorView
 
 function TutorView() {
-  // Dummy data for existing posts
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([
+  const testName = "Enzo"; // Assuming this is the name you want to filter by
+  const [posts, setPosts] = useState([]);
 
-    {
-      id: 1,
-      title: "Math",
-      name: "Enzo",
-      description: "Help with Algebra",
-      date: "2024-04-20",
-    },
-    {
-      id: 2,
-      title: "English",
-      name: "Bao",
-      description: "Essay Writing Assistance",
-      date: "2024-04-21",
-    },
-    // Add more posts as needed
-  ]);
+  useEffect(() => {
+    const fetchPostings = async () => {
+      const fetchedPostings = await getPostings();
+      setPosts(fetchedPostings);
+    };
+
+    fetchPostings();
+  }, []);
+
+  // Filter posts by testName
+  const filteredPosts = posts.filter((post) => post.name === testName);
 
   return (
     <>
-    <Navbar />
-    <div className="tutor-view-container">
-        <h1>Tutor View</h1>
-      <div className="new-post-button">
-      <button className="new-posting" onClick={() => navigate("/new-posting")}>New Posting</button>
+      <Navbar />
+      <div className="tutor-view-container">
+        <h1 className="tutor-title">Tutor View</h1>
+        <div className="new-post-button">
+          <button
+            className="new-posting"
+            onClick={() => navigate("/new-posting")}
+          >
+            New Posting
+          </button>
+        </div>
+        <div className="post-list">
+          {filteredPosts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
+        </div>
       </div>
-      <div className="post-list">
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
-      </div>
-    </div>
     </>
   );
 }

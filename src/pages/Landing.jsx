@@ -8,7 +8,7 @@ function Landing() {
     <div className="App">
       <Navbar></Navbar>
       <div className="LandingHeader">
-        <h1>D214TutorConnect</h1>
+        <h1 className="landing-title">D214TutorConnect</h1>
       </div>
       <div className="App-main">
         <h2>Find a Peer Tutor</h2>

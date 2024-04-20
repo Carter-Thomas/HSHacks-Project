@@ -72,13 +72,12 @@ const SignUp = () => {
     const email = values.email;
     const password = values.password;
     try {
-      signUp(email, password);
+      // signUp(email, password);
 
       if (accountType === "tutor") {
-        updateTutor({
-          name: "",
-          email: email,
-        });
+        navigate("/tutor-view");
+      } else {
+        navigate("/student-view");
       }
     } catch (error) {
       console.error(error);
@@ -114,7 +113,8 @@ const SignUp = () => {
             Signup
           </button>
           <p className="login-link">
-            Already have an account? <button onClick={() => navigate("/login")}>Login</button>
+            Already have an account?{" "}
+            <button onClick={() => navigate("/login")}>Login</button>
           </p>
         </section>
       )}
@@ -128,7 +128,8 @@ const SignUp = () => {
             Signup
           </button>
           <p className="login-link">
-            Already have an account? <button onClick={() => navigate("/login")}>Login</button>
+            Already have an account?{" "}
+            <button onClick={() => navigate("/login")}>Login</button>
           </p>
         </section>
       )}
