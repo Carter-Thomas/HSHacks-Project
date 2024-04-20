@@ -6,10 +6,15 @@ body {
 
 div {
   color: white;
+  
+  .LandingHeader {
+    margin: 20px;
+  }
 }
 
 h1 {
   font-size: 48px;
+  margin-top: 30vh;
 }
 
 .App-header {
@@ -41,14 +46,14 @@ h1 {
 }
 
 .btn {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #61dafb;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  /* margin-top: 20px; */
+  background-color: #3e5c76;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.3s ease;
 }
 
 .btn:hover {

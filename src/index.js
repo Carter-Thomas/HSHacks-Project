@@ -6,12 +6,14 @@ import LandingPage from "./App";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { getTutors } from "./Database";
 import { BrowserRouter } from 'react-router-dom';
+import Navbar from "./Components/Navbar";
 
 getTutors();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+    <Navbar />
     <LandingPage />
     {/* <Signup /> */}
   </BrowserRouter>
