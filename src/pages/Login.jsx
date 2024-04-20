@@ -23,7 +23,6 @@ const Login = () => {
         "Username should be 3-16 characters and shouldn't include any special characters.",
       label: "Username",
       type: "text",
-      pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
     },
     {
@@ -31,7 +30,6 @@ const Login = () => {
       errorMessage: "Invaild email.",
       label: "Email",
       type: "email",
-      pattern: "^[a-zA-Z0-9._%+-]+@stu.d214.org$",
       required: true,
     },
     {
