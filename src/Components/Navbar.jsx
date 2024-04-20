@@ -4,7 +4,7 @@ import "../Styles/Navbar.scss";
 import logoTransparent from "../Assets/D214Logo.png";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import Login from '../Login.js';
+import Login from '../Login';
 import Signup from "../Signup";
 
 function Navbar() {
@@ -16,7 +16,7 @@ function Navbar() {
 
   function handleSignUpPageClick() {
     navigate('/signup');
-  }  
+  }
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -43,7 +43,7 @@ function Navbar() {
             <i className="bi bi-telephone-fill mr-3"></i> 312-444-1423
           </button> */}
         </div>
-          
+
       </nav>
     </header>
   );
