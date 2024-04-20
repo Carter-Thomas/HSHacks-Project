@@ -65,7 +65,13 @@ const Login = () => {
     const password = values.password;
 
     try {
-      login(email, password);
+      // login(email, password);
+
+      if (accountType === "tutor") {
+        navigate("/tutor-view");
+      } else {
+        navigate("/student-view");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -100,7 +106,8 @@ const Login = () => {
             Login
           </button>
           <p className="login-link">
-            Don't have an account? <button onClick={() => navigate("/signup")}>Sign Up</button>
+            Don't have an account?{" "}
+            <button onClick={() => navigate("/signup")}>Sign Up</button>
           </p>
         </section>
       )}
@@ -114,7 +121,8 @@ const Login = () => {
             Login
           </button>
           <p className="login-link">
-            Don't have an account? <button onClick={() => navigate("/signup")}>Sign Up</button>
+            Don't have an account?{" "}
+            <button onClick={() => navigate("/signup")}>Sign Up</button>
           </p>
         </section>
       )}
