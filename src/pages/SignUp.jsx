@@ -4,7 +4,7 @@ import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Signup.scss";
 
-import { signUp } from "../Database";
+import { signUp, updateTutor } from "../Database";
 
 const SignUp = () => {
   const [accountType, setAccountType] = useState(null);
@@ -73,6 +73,13 @@ const SignUp = () => {
     const password = values.password;
     try {
       signUp(email, password);
+
+      if (accountType === "tutor") {
+        updateTutor({
+          name: "",
+          email: email,
+        });
+      }
     } catch (error) {
       console.error(error);
     }

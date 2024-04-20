@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../context";
 import { login } from "../Database";
 
 import FormInput from "../components/FormInput";
@@ -7,7 +6,6 @@ import Navbar from "../components/Navbar";
 import "./styles/Login.scss";
 
 const Login = () => {
-  const { currentUser } = useContext(AuthContext);
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
@@ -66,7 +64,6 @@ const Login = () => {
 
     try {
       login(email, password);
-      console.log(currentUser);
     } catch (error) {
       console.error(error);
     }

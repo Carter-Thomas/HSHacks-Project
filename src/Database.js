@@ -61,3 +61,7 @@ export async function getTutors() {
 export async function updateTutor(tutor) {
   await setDoc(doc(db, "tutors", tutor.name), tutor.toObject());
 }
+
+export async function updateStudent(student) {
+  await setDoc(doc(db, "student", student.name), student.toObject()); // Modify later
+}
