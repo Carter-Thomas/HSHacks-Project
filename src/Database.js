@@ -19,7 +19,9 @@ class Tutor {
 }
 
 export async function getTutors() {
-    return await getDocs(collection(db, 'tutors')).docs.map((doc) => {
+    const snapshot = await getDocs(collection(db, 'tutors'))
+
+    return snapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data());
     })
 }
