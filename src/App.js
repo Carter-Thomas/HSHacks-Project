@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.scss";
 import Button from "react-bootstrap/Button";
-import Login from "./Login.js";
+import Login from "./Login.jsx";
 import Signup from "./Signup.jsx";
 
 function LandingPage() {
