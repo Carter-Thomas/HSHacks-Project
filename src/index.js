@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { getTutors } from "./Database";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import Navbar from "./Components/Navbar";
+import TutorView from "./TutorView";
 
 getTutors();
 
