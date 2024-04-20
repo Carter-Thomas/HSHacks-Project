@@ -5,8 +5,6 @@ import { getTutors } from "./Database";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import App from "./App";
-import TutorView from "./TutorView";
-import NewPosting from "./NewPosting";
 
 getTutors();
 
