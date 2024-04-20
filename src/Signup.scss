@@ -1,5 +1,10 @@
 @import "./global.scss";
 
+.new-post-button {
+  margin: 0;
+  text-align: center;
+}
+
 main {
   display: flex !important;
   justify-content: center !important;
