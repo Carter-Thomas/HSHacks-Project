@@ -73,6 +73,10 @@ function StudentView() {
                 <p>Description</p>
                 <h3>{selectedPost.description}</h3>
               </div>
+              <div>
+                <p>Email</p>
+                <h3>cthomas6003@stu.d214.org</h3>
+              </div>
             </div>
           )}
           {!selectedPost && <h2 className="none">No post selected</h2>}

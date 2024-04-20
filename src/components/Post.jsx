@@ -16,10 +16,6 @@ function Post({ post }) {
         <p>Tutor</p>
         <h3>{name}</h3>
       </div>
-      <div>
-        <p>Description</p>
-        <h3>{description}</h3>
-      </div>
     </div>
   );
 }
