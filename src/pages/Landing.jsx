@@ -14,6 +14,7 @@ function Landing() {
         <h2>Find a Peer Tutor</h2>
       </div>
       <p>Get connected with tutors who can help you succeed!</p>
+      <p>Get Started By Signing Up!</p>
     </div>
   );
 }
