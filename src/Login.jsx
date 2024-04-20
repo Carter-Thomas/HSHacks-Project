@@ -1,16 +1,15 @@
 import { useState } from "react";
 
 import FormInput from "./Components/FormInput";
-import "./Signup.scss";
+import "./Login.scss";
 
-const Signup = () => {
+const Login = () => {
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const inputs = [
@@ -39,14 +38,6 @@ const Signup = () => {
       pattern: "^.{6,}$",
       required: true,
     },
-    {
-      name: "confirmPassword",
-      errorMessage: "Passwords do not match.",
-      label: "Confirm Password",
-      type: "password",
-      pattern: values.password,
-      required: true,
-    },
   ];
 
   const handleAccountType = (type) => {
@@ -62,7 +53,7 @@ const Signup = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     const username = values.username;
@@ -70,7 +61,7 @@ const Signup = () => {
     const password = values.password;
 
     try {
-      // TODO: Add signup logic with firebase
+      // TODO: Add login logic with firebase
     } catch (error) {
       console.error(error);
     }
@@ -79,7 +70,7 @@ const Signup = () => {
   return (
     <main>
       <section>
-        <h1>Signup</h1>
+        <h1>Login</h1>
         <p>Welcome! Are you a tutor or student?</p>
         <button
           onClick={() => handleAccountType("tutor")}
@@ -100,9 +91,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button">Login</button>
           <p className="login-link">
-            Already have an account? <span>Login</span>
+            Don't have an account? <span>Signup</span>
           </p>
         </section>
       )}
@@ -112,9 +103,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button">Login</button>
           <p className="login-link">
-            Already have an account? <span>Login</span>
+            Don't have an account? <span>Signup</span>
           </p>
         </section>
       )}
@@ -122,4 +113,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

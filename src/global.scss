@@ -12,4 +12,6 @@ $text-secondary: #899499;
 
 body {
   background-color: $background;
+  display: flex;
+  justify-content: center;
 }
