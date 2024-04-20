@@ -1,8 +1,10 @@
 import { useState } from "react";
 
-import FormInput from "../components/FormInput";
-import Navbar from "../components/Navbar";
 import "./styles/Signup.scss";
+import Navbar from "../components/Navbar";
+import FormInput from "../components/FormInput";
+
+import { signUp } from "../Database";
 
 const Signup = () => {
   const [accountType, setAccountType] = useState(null);
@@ -69,11 +71,12 @@ const Signup = () => {
     const username = values.username;
     const email = values.email;
     const password = values.password;
-
+        console.log("This function ran");
+        signUp(email, password);
     try {
-      // TODO: Add signup logic with firebase
+
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
   };
 
