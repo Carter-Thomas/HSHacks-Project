@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, } from 'react-router-dom';
-import './App.css';
-import Login from '../hshacks-app-frontend/src/Login';
+import './App.scss';
+import Login from './Login.js';
 import Button from 'react-bootstrap/Button';
 
 function LandingPage() {
