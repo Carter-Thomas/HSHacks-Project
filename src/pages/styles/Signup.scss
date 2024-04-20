@@ -65,7 +65,9 @@ main {
       border-radius: 0.5rem;
       margin-top: 0.5rem;
       font-weight: 500;
-      transition: background-color 0.5s, color 0.5s;
+      transition:
+        background-color 0.5s,
+        color 0.5s;
 
       &:hover {
         background-color: white;

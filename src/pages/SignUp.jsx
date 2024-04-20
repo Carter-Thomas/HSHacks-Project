@@ -4,7 +4,9 @@ import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Signup.scss";
 
-const Signup = () => {
+import { signUp } from "../Database";
+
+const SignUp = () => {
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
@@ -29,7 +31,7 @@ const Signup = () => {
       errorMessage: "Invaild email.",
       label: "Email",
       type: "email",
-      pattern: "^[w-.]+@([w-]+.)+[w-]{2,4}$",
+      pattern: "^[a-zA-Z0-9._%+-]+@stu.d214.org$",
       required: true,
     },
     {
@@ -69,9 +71,8 @@ const Signup = () => {
     const username = values.username;
     const email = values.email;
     const password = values.password;
-
     try {
-      // TODO: Add signup logic with firebase
+      signUp(email, password);
     } catch (error) {
       console.error(error);
     }
@@ -81,7 +82,7 @@ const Signup = () => {
     <main>
       <section>
         <Navbar />
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
         <p>Welcome! Are you a tutor or student?</p>
         <button
           onClick={() => handleAccountType("tutor")}
@@ -102,7 +103,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button" onClick={handleSubmit}>
+            Signup
+          </button>
           <p className="login-link">
             Already have an account? <span>Login</span>
           </p>
@@ -114,7 +117,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button" onClick={handleSubmit}>
+            Signup
+          </button>
           <p className="login-link">
             Already have an account? <span>Login</span>
           </p>
@@ -124,4 +129,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;

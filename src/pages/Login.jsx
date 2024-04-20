@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../context";
+import { login } from "../Database";
 
 import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Login.scss";
 
 const Login = () => {
+  const { currentUser } = useContext(AuthContext);
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
@@ -28,7 +31,7 @@ const Login = () => {
       errorMessage: "Invaild email.",
       label: "Email",
       type: "email",
-      pattern: "^[w-.]+@([w-]+.)+[w-]{2,4}$",
+      pattern: "^[a-zA-Z0-9._%+-]+@stu.d214.org$",
       required: true,
     },
     {
@@ -62,7 +65,8 @@ const Login = () => {
     const password = values.password;
 
     try {
-      // TODO: Add login logic with firebase
+      login(email, password);
+      console.log(currentUser);
     } catch (error) {
       console.error(error);
     }
@@ -93,7 +97,9 @@ const Login = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Login</button>
+          <button className="signup-button" onClick={handleLogin}>
+            Login
+          </button>
           <p className="login-link">
             Don't have an account? <span>Signup</span>
           </p>
@@ -105,7 +111,9 @@ const Login = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Login</button>
+          <button className="signup-button" onClick={handleLogin}>
+            Login
+          </button>
           <p className="login-link">
             Don't have an account? <span>Signup</span>
           </p>
