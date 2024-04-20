@@ -17,7 +17,7 @@ function Navbar() {
       <nav
         className={`d-flex p-3 ${scroll ? "sticky" : ""} justify-space-between`}
       >
-        <img src={logoTransparent} alt="logo" />
+        <img src={logoTransparent} alt="logo" onClick={()=>navigate("/")}/>
         <div className="button-group">
           <button onClick={() => navigate("/signup")}>Signup</button>
           <button onClick={() => navigate("/login")}>Login</button>
