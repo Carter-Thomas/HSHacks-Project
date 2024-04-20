@@ -41,31 +41,6 @@ export function logout() {
   signOut(auth);
 }
 
-export async function getTutors() {
-  const snapshot = await getDocs(collection(db, "tutors"));
-
-  const tutors = [];
-  return snapshot.forEach((doc) => {
-    const data = doc.data();
-    var tutor = new Tutor(doc.id, data.email, data.school, data.subjects);
-    data.sessions.forEach((opening) => {
-      const session = new Session(opening.start.toDate(), opening.end.toDate());
-      session.available = opening.available;
-      tutor.sessions.push(session);
-    });
-    tutors.push(tutor);
-    console.log(tutor); // WARN: for testing
-  });
-}
-
-export async function updateTutor(tutor) {
-  await setDoc(doc(db, "tutors", tutor.name), tutor.toObject());
-}
-
-export async function updateStudent(student) {
-  await setDoc(doc(db, "student", student.name), student.toObject()); // Modify later
-}
-
 export async function addPosting(posting) {
   await setDoc(doc(db, "postings", posting.title), { ...posting });
 }
