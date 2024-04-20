@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles/App.scss";
 import "./styles/TutorView.scss"; // Custom SCSS for TutorView
 import Post from "../components/Post.jsx"; // Assuming Post component for each posting
+import NewPosting from "./NewPosting.jsx";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar.jsx";
 
 function TutorView() {
   // Dummy data for existing posts
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([
+
     {
       id: 1,
       title: "Math",
@@ -25,14 +29,12 @@ function TutorView() {
   ]);
 
   return (
+    <>
+    <Navbar />
     <div className="tutor-view-container">
-      <header className="page-header">
         <h1>Tutor View</h1>
-      </header>
       <div className="new-post-button">
-        <Link to="/new-posting" className="btn-primary btn">
-          New Posting
-        </Link>
+      <button className="new-posting" onClick={() => navigate("/new-posting")}>New Posting</button>
       </div>
       <div className="post-list">
         {posts.map((post) => (
@@ -40,6 +42,7 @@ function TutorView() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
