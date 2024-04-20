@@ -9,4 +9,8 @@ import StudentView from "./pages/StudentView";
 getTutors();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>);
+root.render(
+  <AuthContextProvider>
+    <App />
+  </AuthContextProvider>
+);
