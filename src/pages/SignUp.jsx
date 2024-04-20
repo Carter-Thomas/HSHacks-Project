@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import "./styles/Signup.scss";
-import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
+import Navbar from "../components/Navbar";
+import "./styles/Signup.scss";
 
 import { signUp } from "../Database";
 
@@ -72,9 +72,9 @@ const SignUp = () => {
     const email = values.email;
     const password = values.password;
     try {
-        signUp(email, password);
+      signUp(email, password);
     } catch (error) {
-        console.error(error);
+      console.error(error);
     }
   };
 

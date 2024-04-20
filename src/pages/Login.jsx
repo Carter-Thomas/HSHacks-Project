@@ -4,6 +4,8 @@ import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Login.scss";
 
+import { login } from "../Database";
+
 const Login = () => {
   const [accountType, setAccountType] = useState(null);
 
@@ -62,7 +64,8 @@ const Login = () => {
     const password = values.password;
 
     try {
-      // TODO: Add login logic with firebase
+      login(email, password);
+      console.log("Logged in");
     } catch (error) {
       console.error(error);
     }

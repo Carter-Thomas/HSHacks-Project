@@ -1,52 +1,50 @@
 .tutor-view-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 50px;
-    margin-top: 20vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  margin-top: 20vh;
+}
+
+.page-header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  h1 {
+    align-items: center;
+    margin: 0;
+    padding: 5px;
   }
-  
-  .page-header {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  
-    h1 {
-      align-items: center;
-      margin: 0;
-      padding: 5px;
-    }
-  
-    .btn-primary {
-      background-color: #007bff;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
-  
-  .post-list {
-    
-    .post {
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+
+    &:hover {
       background-color: #0056b3;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-  
-      .post-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-  
-        h3 {
-          margin: 0;
-        }
+    }
+  }
+}
+
+.post-list {
+  .post {
+    background-color: #0056b3;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      h3 {
+        margin: 0;
       }
     }
   }
-  
+}

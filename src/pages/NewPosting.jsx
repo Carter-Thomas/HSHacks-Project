@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/NewPosting.scss"; 
+import "./styles/NewPosting.scss";
 
 function NewPosting() {
   return (
