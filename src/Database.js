@@ -18,6 +18,7 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 export function signUp(email, password) {
+    if (!email.toLowerCase().endsWith("d214.org")) return;
     createUserWithEmailAndPassword(auth, email, password)
 }
 
@@ -46,6 +47,6 @@ export async function getTutors() {
     })
 }
 
-export async function addTutor(tutor) {
+export async function updateTutor(tutor) {
     await setDoc(doc(db, "tutors", tutor.name), tutor.toObject());
 }
