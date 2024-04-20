@@ -65,3 +65,23 @@ export async function updateTutor(tutor) {
 export async function updateStudent(student) {
   await setDoc(doc(db, "student", student.name), student.toObject()); // Modify later
 }
+
+export async function addPosting(posting) {
+  await setDoc(doc(db, "postings", posting.title), { ...posting });
+}
+
+export async function getPostings() {
+  const snapshot = await getDocs(collection(db, "postings"));
+
+  const postings = [];
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+    const posting = {
+      id: doc.id,
+      ...data,
+    };
+    postings.push(posting);
+  });
+
+  return postings;
+}

@@ -44,7 +44,7 @@ FormInput.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   errorMessage: PropTypes.string.isRequired,
-  pattern: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
 };
 
 export default FormInput;
