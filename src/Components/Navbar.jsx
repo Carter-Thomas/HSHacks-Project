@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
-import "../App.scss";
-import "../Styles/Navbar.scss";
-import logoTransparent from "../Assets/D214Logo.png";
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Login from '../Login';
-import Signup from "../Signup";
+import "./styles/Navbar.scss";
+import logoTransparent from "../assets/D214Logo.png";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
-
-  function handleNewPageClick() {
-    navigate('/login');
-  }
-
-  function handleSignUpPageClick() {
-    navigate('/signup');
-  }
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -26,27 +14,20 @@ function Navbar() {
 
   return (
     <header>
-      <nav className={`d-flex p-3 ${scroll ? "sticky" : ""} justify-space-between`}>
+      <nav
+        className={`d-flex p-3 ${scroll ? "sticky" : ""} justify-space-between`}
+      >
         <img src={logoTransparent} alt="logo" />
         <div className="button-group">
-        <div>
-          <Routes>
-            <Route path="/" element={<Button onClick={handleNewPageClick}>Login</Button>} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<Button onClick={handleSignUpPageClick}>Sign Up</Button>} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-          </div>
-          {/* <button className="contact">
+          <button onClick={() => navigate("/signup")}>Signup</button>
+          <button onClick={() => navigate("/login")}>Login</button>
+          <button className="contact">
             <i className="bi bi-telephone-fill mr-3"></i> 312-444-1423
-          </button> */}
+          </button>
         </div>
-
       </nav>
     </header>
   );
-};
+}
 
 export default Navbar;
