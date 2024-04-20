@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+
+  div {
+    text-align: left;
+    p {
+      margin: 0;
+      color: $text-secondary;
+    }
+
+    h2,
+    h3 {
+      margin: 0;
+    }
+  }
+}

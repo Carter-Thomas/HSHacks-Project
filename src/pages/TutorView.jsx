@@ -10,7 +10,7 @@ import "./styles/TutorView.scss"; // Custom SCSS for TutorView
 
 function TutorView() {
   const navigate = useNavigate();
-  const testName = "Enzo"; // Assuming this is the name you want to filter by
+  const testName = "Carter"; // Assuming this is the name you want to filter by
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

@@ -57,6 +57,26 @@ function StudentView() {
             onChange={handleSearchChange}
           />
         </div>
+        <div className="post-details">
+          <h3>Selected Post</h3>
+          {selectedPost && (
+            <div className="selected-post">
+              <div className="t">
+                <p>Title</p>
+                <h2>{selectedPost.title}</h2>
+              </div>
+              <div className="t">
+                <p>Tutor</p>
+                <h3>{selectedPost.name}</h3>
+              </div>
+              <div className="t">
+                <p>Description</p>
+                <h3>{selectedPost.description}</h3>
+              </div>
+            </div>
+          )}
+          {!selectedPost && <h2 className="none">No post selected</h2>}
+        </div>
         <div className="post-list">
           <h3>Tutoring Options</h3>
           <ul>
@@ -72,19 +92,6 @@ function StudentView() {
                   </li>
                 ))}
           </ul>
-        </div>
-        <div className="post-details">
-          <h3>Selected Post</h3>
-          {selectedPost && (
-            <div className="post-description">
-              <h4>{selectedPost.title}</h4>
-              <p>{selectedPost.description}</p>
-              <p>
-                <strong>Tutor:</strong> {selectedPost.name}
-              </p>
-              {/* Add more details as needed */}
-            </div>
-          )}
         </div>
       </div>
     </>
