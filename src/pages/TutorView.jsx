@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./styles/TutorView.scss"; // Custom SCSS for TutorView
+
 import Post from "../components/Post.jsx"; // Assuming Post component for each posting
 import NewPosting from "./NewPosting.jsx";
 import { useNavigate } from "react-router-dom";
 import { getPostings } from "../Database";
 import Navbar from "../components/Navbar.jsx";
+import "./styles/TutorView.scss"; // Custom SCSS for TutorView
 
 function TutorView() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function TutorView() {
     <>
       <Navbar />
       <div className="tutor-view-container">
-        <h1>Tutor View</h1>
+        <h1 className="tutor-title">Tutor View</h1>
         <div className="new-post-button">
           <button
             className="new-posting"
