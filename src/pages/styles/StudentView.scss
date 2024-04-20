@@ -1,80 +1,82 @@
 @import "../../global.scss";
 
 .student-view-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 10vh;
-  
-    .search-filters {
-      grid-column: 1 / span 2; // Stretch across both columns
-      display: flex;
-      align-items: center;
-  
-      input[type="text"] {
-        flex: 1; // Take up remaining space
-        padding: 8px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
-  
-      select {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10vh;
+
+  .search-filters {
+    grid-column: 1 / span 2; // Stretch across both columns
+    display: flex;
+    align-items: center;
+
+    input[type="text"] {
+      flex: 1; // Take up remaining space
+      padding: 8px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
     }
-  
-    .post-list {
-      ul {
-        list-style: none;
-        padding: 0;
-  
-        li {
-          padding: 10px;
-          background-color: black;
-          border-radius: 5px;
-          cursor: pointer;
-          margin-bottom: 10px;
-  
-          span {
-            display: block;
-            font-weight: bold;
-          }
-  
-          &:hover {
-            background-color: #e9ecef;
-          }
-        }
-      }
+
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
     }
-  
-    .post-details {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 2.75vh; // Remove margin-top to align with post-list
-  
-      h3 {
-        margin-top: 0;
-        text-align: center;
-      }
-  
-      .post-description {
-        background-color: black;
+  }
+
+  .post-list {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
         padding: 10px;
+        background-color: $primary; // Match primary color
         border-radius: 5px;
-  
-        h4 {
-          margin-top: 0;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        span {
+          display: block;
+          font-weight: bold;
+          color: white; // Text color
+        }
+
+        &:hover {
+          background-color: $secondary; // Hover color
         }
       }
     }
   }
-  
+
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.75vh; // Remove margin-top to align with post-list
+
+    h3 {
+      margin-top: 0;
+      text-align: center;
+      color: white; // Title color
+    }
+
+    .post-description {
+      background-color: $primary; // Match primary color
+      padding: 10px;
+      border-radius: 5px;
+
+      h4 {
+        margin-top: 0;
+        color: white; // Text color
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addPosting } from "../Database";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
 import "./styles/NewPosting.scss";
 
@@ -54,6 +54,8 @@ function NewPosting() {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="new-posting-container">
       <h1>Create New Posting</h1>
       <section className="form-inputs">
@@ -65,6 +67,7 @@ function NewPosting() {
         </button>
       </section>
     </div>
+    </>
   );
 }
 
