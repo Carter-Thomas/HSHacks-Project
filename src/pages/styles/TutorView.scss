@@ -1,8 +1,8 @@
 @import "../../global.scss";
 
 .new-posting {
-  background-color: #3e5c76;
-  color: white;
+  background-color: $primary; // Match primary color
+  color: white; // Text color
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -10,6 +10,10 @@
   align-items: center;
   transition: background-color 0.3s ease;
   margin: auto;
+
+  &:hover {
+    background-color: $secondary; // Hover color
+  }
 }
 
 .tutor-view-container {
@@ -30,8 +34,8 @@
     h1 {
       align-items: center;
       margin: 0;
-
       padding: 5px;
+      color: white; // Title color
     }
 
     .tutor-title {
@@ -48,7 +52,7 @@
         transition: background-color 0.35s;
 
         &:hover {
-          background-color: $secondary;
+          background-color: $secondary; // Hover color
         }
       }
     }
@@ -56,7 +60,7 @@
 
   .post-list {
     .post {
-      background-color: #0056b3;
+      background-color: $primary; // Match primary color
       padding: 20px;
       border-radius: 5px;
       margin-bottom: 20px;
@@ -69,6 +73,7 @@
 
         h3 {
           margin: 0;
+          color: white; // Text color
         }
       }
     }
