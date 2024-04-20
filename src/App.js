@@ -13,8 +13,14 @@ function LandingPage() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Find a Peer Tutor</h1>
+      <div className="LandingHeader">
+        <h1>D214TutorConnect</h1>
+      </div>
+      <header>
+        
+      </header>
+      <div className="App-main">
+        <h2>Find a Peer Tutor</h2>
         <nav>
           <Routes>
             <Route path ="/" element={
@@ -25,8 +31,8 @@ function LandingPage() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </nav>
-        <p>Get connected with tutors who can help you succeed!</p>
-      </header>
+      </div>
+      <p>Get connected with tutors who can help you succeed!</p>
     </div>
   );
 }
