@@ -1,0 +1,27 @@
+@import "./global.scss";
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  label {
+    color: $text-secondary;
+  }
+
+  input {
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.35rem;
+
+    &:invalid[focused="true"] ~ span {
+      color: red;
+      display: block;
+    }
+  }
+
+  span {
+    color: red;
+    display: none;
+  }
+}
