@@ -13,16 +13,28 @@ const app = initializeApp({
 const db = getFirestore(app);
 
 class Tutor {
-    constructor(name) {
+    constructor(name, email, school) {
+        // contact info
         this.name = name;
+        this.email = email;
+        this.school = school;
+
+        // availability
+        this.subjects = [];
+        this.availableDates = [];
     }
 }
 
 export async function getTutors() {
     const snapshot = await getDocs(collection(db, 'tutors'))
 
+    const tutors = [];
     return snapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
+        const data = doc.data();
+        var tutor = new Tutor(doc.id, data.email, data.school);
+        tutor.subjects = data.subjects;
+        tutor.availableDates = data.availableDates;
+        tutors.push(tutor);
+        console.log(tutor); // for testing
     })
 }
-
