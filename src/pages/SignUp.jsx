@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Signup.scss";
@@ -8,6 +8,8 @@ import { signUp, updateTutor } from "../Database";
 
 const SignUp = () => {
   const [accountType, setAccountType] = useState(null);
+
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     username: "",
@@ -114,7 +116,7 @@ const SignUp = () => {
             Signup
           </button>
           <p className="login-link">
-            Already have an account? <span>Login</span>
+            Already have an account? <button onClick={() => navigate("/login")}>Login</button>
           </p>
         </section>
       )}
@@ -128,7 +130,7 @@ const SignUp = () => {
             Signup
           </button>
           <p className="login-link">
-            Already have an account? <span>Login</span>
+            Already have an account? <button onClick={() => navigate("/login")}>Login</button>
           </p>
         </section>
       )}

@@ -1,12 +1,14 @@
 import { useState, useContext } from "react";
 import { login } from "../Database";
-
+import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Login.scss";
 
 const Login = () => {
   const [accountType, setAccountType] = useState(null);
+
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     username: "",
@@ -98,7 +100,7 @@ const Login = () => {
             Login
           </button>
           <p className="login-link">
-            Don't have an account? <span>Signup</span>
+            Don't have an account? <button onClick={() => navigate("/signup")}>Sign Up</button>
           </p>
         </section>
       )}
@@ -112,7 +114,7 @@ const Login = () => {
             Login
           </button>
           <p className="login-link">
-            Don't have an account? <span>Signup</span>
+            Don't have an account? <button onClick={() => navigate("/signup")}>Sign Up</button>
           </p>
         </section>
       )}
