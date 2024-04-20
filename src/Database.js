@@ -43,7 +43,7 @@ export async function getTutors() {
             tutor.sessions.push(session);
         });
         tutors.push(tutor);
-        console.log(tutor); // for testing
+        console.log(tutor); // WARN: for testing
     })
 }
 

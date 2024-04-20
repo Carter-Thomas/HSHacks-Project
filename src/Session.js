@@ -20,10 +20,14 @@ export class Period {
 }
 
 export class Session {
-    constructor(start, end, available) {
+    constructor(start, end) {
         this.start = start;
         this.end = end;
-        this.available = available;
+        this.available = true;
+    }
+
+    book() {
+        this.available = false;
     }
 
     toPeriod() {
