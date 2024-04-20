@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { signUp } from "../Database";
 
 import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
 import "./styles/Signup.scss";
 
-const Signup = () => {
+import { signUp } from "../Database";
+
+const SignUp = () => {
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
@@ -70,10 +71,8 @@ const Signup = () => {
     const username = values.username;
     const email = values.email;
     const password = values.password;
-
-    signUp(email, password);
-
     try {
+      signUp(email, password);
     } catch (error) {
       console.error(error);
     }
@@ -83,7 +82,7 @@ const Signup = () => {
     <main>
       <section>
         <Navbar />
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
         <p>Welcome! Are you a tutor or student?</p>
         <button
           onClick={() => handleAccountType("tutor")}
@@ -130,4 +129,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
