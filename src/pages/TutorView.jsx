@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./App.scss";
-import "./Styles/TutorView.scss"; // Custom SCSS for TutorView
-import Post from "./Components/Post"; // Assuming Post component for each posting
+import "./styles/App.scss";
+import "./styles/TutorView.scss"; // Custom SCSS for TutorView
+import Post from "../components/Post.jsx"; // Assuming Post component for each posting
 
 function TutorView() {
     // Dummy data for existing posts
