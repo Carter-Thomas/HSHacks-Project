@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signUp } from "../Database";
 
 import FormInput from "../components/FormInput";
 import Navbar from "../components/Navbar";
@@ -29,7 +30,7 @@ const Signup = () => {
       errorMessage: "Invaild email.",
       label: "Email",
       type: "email",
-      pattern: "^[w-.]+@([w-]+.)+[w-]{2,4}$",
+      pattern: "^[a-zA-Z0-9._%+-]+@stu.d214.org$",
       required: true,
     },
     {
@@ -70,8 +71,9 @@ const Signup = () => {
     const email = values.email;
     const password = values.password;
 
+    signUp(email, password);
+
     try {
-      // TODO: Add signup logic with firebase
     } catch (error) {
       console.error(error);
     }
@@ -102,7 +104,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button" onClick={handleSubmit}>
+            Signup
+          </button>
           <p className="login-link">
             Already have an account? <span>Login</span>
           </p>
@@ -114,7 +118,9 @@ const Signup = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Signup</button>
+          <button className="signup-button" onClick={handleSubmit}>
+            Signup
+          </button>
           <p className="login-link">
             Already have an account? <span>Login</span>
           </p>
