@@ -1,4 +1,4 @@
-@import "./global.scss";
+@import "../../global.scss";
 
 main {
   display: flex !important;
@@ -10,7 +10,7 @@ main {
   section {
     display: flex;
     flex-direction: column;
-    margin-top: 10vh;
+    margin-top: 15vh;
 
     h1 {
       margin: 0;
@@ -25,7 +25,6 @@ main {
 
     button {
       margin-bottom: 0.5rem;
-      font-size: 1.5rem;
       padding: 0.5rem;
       background-color: $primary;
       color: white;

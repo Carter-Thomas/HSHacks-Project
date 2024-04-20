@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-import FormInput from "./Components/FormInput";
-import "./Login.scss";
+import FormInput from "../components/FormInput";
+import Navbar from "../components/Navbar";
+import "./styles/Signup.scss";
 
-const Login = () => {
+const Signup = () => {
   const [accountType, setAccountType] = useState(null);
 
   const [values, setValues] = useState({
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
 
   const inputs = [
@@ -38,6 +40,14 @@ const Login = () => {
       pattern: "^.{6,}$",
       required: true,
     },
+    {
+      name: "confirmPassword",
+      errorMessage: "Passwords do not match.",
+      label: "Confirm Password",
+      type: "password",
+      pattern: values.password,
+      required: true,
+    },
   ];
 
   const handleAccountType = (type) => {
@@ -53,7 +63,7 @@ const Login = () => {
     }));
   };
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const username = values.username;
@@ -61,7 +71,7 @@ const Login = () => {
     const password = values.password;
 
     try {
-      // TODO: Add login logic with firebase
+      // TODO: Add signup logic with firebase
     } catch (error) {
       console.error(error);
     }
@@ -70,7 +80,8 @@ const Login = () => {
   return (
     <main>
       <section>
-        <h1>Login</h1>
+        <Navbar />
+        <h1>Signup</h1>
         <p>Welcome! Are you a tutor or student?</p>
         <button
           onClick={() => handleAccountType("tutor")}
@@ -91,9 +102,9 @@ const Login = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Login</button>
+          <button className="signup-button">Signup</button>
           <p className="login-link">
-            Don't have an account? <span>Signup</span>
+            Already have an account? <span>Login</span>
           </p>
         </section>
       )}
@@ -103,9 +114,9 @@ const Login = () => {
           {inputs.map((input, index) => (
             <FormInput key={index} {...input} onChange={onChange} />
           ))}
-          <button className="signup-button">Login</button>
+          <button className="signup-button">Signup</button>
           <p className="login-link">
-            Don't have an account? <span>Signup</span>
+            Already have an account? <span>Login</span>
           </p>
         </section>
       )}
@@ -113,4 +124,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

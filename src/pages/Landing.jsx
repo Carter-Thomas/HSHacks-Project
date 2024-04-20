@@ -1,9 +1,12 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
 
-function LandingPage() {
+import Navbar from "../components/Navbar";
+import "./styles/Landing.scss";
+
+function Landing() {
   return (
     <div className="App">
+      <Navbar></Navbar>
       <div className="LandingHeader">
         <h1>D214TutorConnect</h1>
       </div>
@@ -15,4 +18,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default Landing;
