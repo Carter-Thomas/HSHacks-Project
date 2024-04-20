@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FormInput from "./FormInput";
+import FormInput from "./Components/FormInput";
 import "./Signup.scss";
 
 const Signup = () => {

@@ -1,10 +1,11 @@
 @import "./global.scss";
 
 main {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
   width: 45vw;
+  text-align: left;
 
   section {
     display: flex;
